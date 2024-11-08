@@ -25,9 +25,17 @@ public class Ejercicio5 {
 		
 		// Pedimos los valores del array al usuario
 		for (int i = 1 ; i < 10 ; i++) {
-			System.out.print("Introduzca un número entero: ");
-			numeroUsuario = reader.nextInt();
-			diezNumeros[i] = numeroUsuario;
+		
+			do {
+				try {
+					System.out.print("Introduzca un número entero: ");
+					numeroUsuario = reader.nextInt();
+					diezNumeros[i] = numeroUsuario;
+				} catch (AssertionError e) {
+					
+				}
+				} while (numeroUsuario <= 0);
+				
 		}
 		
 		// Asignamos el primer valor del array a las variables valorMin y valorMax
