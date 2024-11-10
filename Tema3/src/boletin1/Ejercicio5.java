@@ -1,6 +1,7 @@
 package boletin1;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio5 {
@@ -11,7 +12,7 @@ public class Ejercicio5 {
 		double diezNumeros[] = new double[10];
 		
 		// Creamos la variable numeroUsuario para almacenar los numeros que introduzca el usuario
-		double numeroUsuario;
+		double numeroUsuario = 0;
 		
 		// Creamos la variable suma para almacenar la suma de todos los valores del array
 		double suma = 0;
@@ -28,11 +29,12 @@ public class Ejercicio5 {
 		
 			do {
 				try {
-					System.out.print("Introduzca un número entero: ");
+					System.out.print("Introduzca un número: ");
 					numeroUsuario = reader.nextInt();
 					diezNumeros[i] = numeroUsuario;
-				} catch (AssertionError e) {
-					
+				} catch (InputMismatchException e) {
+					System.out.println("Introduzca un número real");
+					reader.next();
 				}
 				} while (numeroUsuario <= 0);
 				
