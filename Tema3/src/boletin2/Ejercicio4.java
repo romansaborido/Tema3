@@ -44,12 +44,11 @@ public class Ejercicio4 {
 			
 		}
 		
+		// Salto de linea
+		System.out.println();
 		
 		// Ordenamos las puntuaciones del array 
 		Arrays.sort(puntuaciones);
-		
-		// Salto de linea
-		System.out.println();
 		
 		// Mostramos la clasificación
 		for (int i = puntuaciones.length - 1 ; i > 0 ; i--) {
