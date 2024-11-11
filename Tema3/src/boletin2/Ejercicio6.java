@@ -16,6 +16,9 @@ public class Ejercicio6 {
 		// Creamos la variable numeroAciertos para almacenar el numero de aciertos
 		int numeroAciertos = 0;
 		
+		// Creamos la variable posicion para almacenar la posicion de un valor a buscar
+		int posicion;
+		
 		// Creamos la clase random para generar numeros aleatorios
 		Random rand = new Random();
 		
@@ -39,15 +42,30 @@ public class Ejercicio6 {
 		// Mostramos al usuario su cupon
 		System.out.println("Su cupón:");
 		System.out.println(Arrays.toString(cuponUsuario));
+		System.out.println();
 		
 		// Mostramos al usuario el cupón ganador
 		System.out.println("Cupón ganador del día: ");
 		System.out.println(Arrays.toString(cuponGanador));
+		System.out.println();
 		
-		// Recorremos los dos cupones
-		for (int i = 0 ; i < 6 ; i++) {
+		// Buscamos los valores del array cuponUsuario en el array ordenado cuponGanador
+		for (int i = 0 ; i < cuponUsuario.length ; i++) {
+			posicion = Arrays.binarySearch(cuponGanador, cuponUsuario[i]);
 			
+			if (posicion >= 0) {
+				numeroAciertos++;
+			}	
 		}
+		
+		// Mostramos los resultados
+		if (numeroAciertos > 0) {
+			System.out.println("Número de aciertos: " + numeroAciertos);
+		} else {
+			System.out.println("No tienes ningún acierto :(");
+		}
+		
+		
 	}
 
 }
