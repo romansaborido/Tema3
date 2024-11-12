@@ -26,8 +26,9 @@ public class Ejercicio6 {
 		int busqueda;
 		int busqueda2;
 		
-		// Creamos la variable numeroAleatorio para ir almacenando los numeros aleatorios que vamos generando
+		// Creamos la variable numeroAleatorio y numeroAleatorio2 para ir almacenando los numeros aleatorios que vamos generando
 		int numeroAleatorio;
+		int numeroAleatorio2;
 		
 		// Creamos la clase random para generar numeros aleatorios
 		Random rand = new Random();
@@ -45,11 +46,11 @@ public class Ejercicio6 {
 		
 		// Asignamos los valores del array cuponGanador
 		while (posicionGanador < cuponGanador.length) {
-			numeroAleatorio = rand.nextInt(1,50);
+			numeroAleatorio2 = rand.nextInt(1,50);
 			Arrays.sort(cuponGanador);
-			busqueda = Arrays.binarySearch(cuponUsuario, numeroAleatorio);
-			if (busqueda < 0) {
-				cuponUsuario[0] = numeroAleatorio;
+			busqueda2 = Arrays.binarySearch(cuponUsuario, numeroAleatorio2);
+			if (busqueda2 < 0) {
+				cuponGanador[0] = numeroAleatorio2;
 				posicionGanador++;
 			}
 		}
