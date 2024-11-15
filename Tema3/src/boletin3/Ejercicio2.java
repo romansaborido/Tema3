@@ -14,7 +14,7 @@ public class Ejercicio2 {
 		
 		// Creamos la variable suma para almacenar la suma de las notas de cada alumno para posteriormente calcular la media
 		double suma = 0;
-		
+
 		// Creamos la variable media para almacenar la media de las notas de cada alumno
 		double media;
 		
@@ -27,7 +27,7 @@ public class Ejercicio2 {
 		// Creamos el scanner
 		Scanner reader = new Scanner(System.in);
 		
-		// Pedimos los valores al usuario
+		// Pedimos los valores al usuario y los registramos en la tabla
 		for (int i = 0 ; i < notasAlumnos.length ; i++) {
 			System.out.println("Alumno " + (i+1) + ", introduzca tus notas");
 			System.out.println();
@@ -36,14 +36,17 @@ public class Ejercicio2 {
 				nota = reader.nextDouble();
 				notasAlumnos[i][j] = nota;
 			}
+			// Salto de linea por cada fila
 			System.out.println();
 		}
 		
-		// Imprimimos las notas 
+		// Imprimimos las notas (encabezado de la tabla)
 		System.out.print("\t\t" + "Nota 1");
 		for (int i = 2 ; i <= 5 ; i++) {
 			System.out.print("\t" + "Nota"+i);
 		}
+		
+		// Salto de linea
 		System.out.println();
 		
 		// Mostramos la tabla
@@ -52,7 +55,8 @@ public class Ejercicio2 {
 			for (int j = 0 ; j < notasAlumnos[i].length ; j++) {
 				System.out.print(notasAlumnos[i][j] + "\t");
 			}
-		System.out.println();
+			// Salto de linea por cada fila
+			System.out.println();
 		}
 		
 		// Salto de linea
@@ -61,10 +65,15 @@ public class Ejercicio2 {
 		// Mostramos los resultados
 		for (int i = 0 ; i < notasAlumnos.length ; i++) {
 			for (int j = 0 ; j < notasAlumnos[i].length ; j++) {
+				
+				// Sumamos las notas de la fila actual
 				suma += notasAlumnos[i][j];
+				
+				// Obtenemos la nota minima y maxima de la fila actual
 				notaMinima = Math.min(notaMinima, notasAlumnos[i][j]);
 				notaMaxima = Math.max(notaMaxima, notasAlumnos[i][j]);
 			}
+			// Mostramos los resultados
 			media = suma / 5;
 			System.out.println("Alumno " + (i+1));
 			System.out.println("Nota media: " + media);
