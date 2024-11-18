@@ -22,8 +22,10 @@ public class Ejercicio2 {
 	
 	static int valorMaximo(int t[]) {
 		
-		// Creamos la variable a devolver
+		// Creamos la variable a devolver y la inicializamos
 		int valorMaximo = 0;
+		
+		
 		
 		
 		// Devolvemos el valor a la variable valorMaximo
