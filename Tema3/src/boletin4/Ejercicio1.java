@@ -10,6 +10,9 @@ public class Ejercicio1 {
 		// Creamos la tabla llamada numerosEnteros de longitud 10
 		int numerosEnteros[] = new int[10];
 		
+		// Creamos la variable sumaNumerosEnteros para almacenar el resultado de la funcion
+		int sumaNumerosEnteros;
+		
 		// Creamos la clase random para generar numeros aleatorios
 		Random rand = new Random();
 		
@@ -18,19 +21,22 @@ public class Ejercicio1 {
 			numerosEnteros[i] = rand.nextInt(1,11);
 		}
 		
+		// Almacenamos el resultado de la funcion
+		sumaNumerosEnteros = sumaValores(numerosEnteros);
+		
 		// Imprimimos la tabla
 		System.out.println(Arrays.toString(numerosEnteros));
 		
 		// Salto de linea
 		System.out.println();
 		
-		// Llamamos a la funcion e imprimimos su valor
-		System.out.println("Suma de todos los valores de la tabla -> " + sumaValores(numerosEnteros));
+		// Imprimimos el resultado
+		System.out.println("Suma de todos los valores de la tabla -> " + sumaNumerosEnteros);
 		
 	}
 	
 	
-	static int sumaValores(int[] tabla) {
+	static int sumaValores(int tabla[]) {
 		
 		// Creamos la variable a devolver
 		int suma = 0;
