@@ -4,30 +4,49 @@ public class Ejercicio3 {
 
 	public static void main(String[] args) {
 		
-		// Creamos una tabla bidimensional de matriz simetrica
-		int tabla[][] = new int[3][3]; 
+		// Creamos una tabla matriz simetrica llamada A
+		int A[][] = new int[3][3]; 
 		
 		// Creamos el booleano simetria para almacenar el resultado de la funcion
 		boolean simetria;
 		
 		// Asignamos los valores de la tabla
-		tabla[0][0] = 4;
-		tabla[0][1] = 1;
-		tabla[0][2] = 2;
-		tabla[1][0] = 1;
-		tabla[1][1] = 3;
-		tabla[1][2] = 5;
-		tabla[2][0] = 2;
-		tabla[2][1] = 5;
-		tabla[2][2] = 6;
+		A[0][0] = 4;
+		A[0][1] = 1;
+		A[0][2] = 2;
+		A[1][0] = 1;
+		A[1][1] = 3;
+		A[1][2] = 5;
+		A[2][0] = 2;
+		A[2][1] = 5;
+		A[2][2] = 6;
 		
 		// Asignamos el resultado de la funcion a simetria
-		simetria = simetriaMatriz(tabla);
+		simetria = simetriaMatriz(A);
 		
-		// Mostramos la tabla 
-		for (int i = 0 ; i < tabla.length ; i++) {
-			for (int j = 0 ; j < tabla)
+		// Mostramos la tabla con fomato de matriz
+		for (int i = 0 ; i < A.length ; i++) {
+			if (i == 1) {
+				System.out.print("A = ");
+			} else {
+				System.out.print("    ");
+			}
+			for (int j = 0 ; j < A[i].length ; j++) {
+				System.out.print(A[i][j] + " ");
+			}
+			System.out.println();
 		}
+		
+		// Salto de linea
+		System.out.println();
+		
+		// Mostramos el resultado
+		if (simetria) {
+			System.out.println("La matriz es simétrica");
+		} else {
+			System.out.println("La matriz NO es simétrica");
+		}
+			
 		
 	}
 	
