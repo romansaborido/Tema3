@@ -81,13 +81,22 @@ public class Ejercicio1 {
 		// Creamos el booleano a devolver y lo inicializamos a false 
 		boolean busqueda = false;
 		
+		// Creamos la variable contadorFilas para ir controlando la posicion del valor cuando estamos realizando la busqueda
+		int contadorFilas = 0;
+		
+		// Creamos la variable contadorColumnas para ir controlando la posicion del valor cuando estamos realizando la busqueda
+		int contadorColumnas = 0;
+		
 		// Recorremos la tabla comprobando si el valor a buscar es igual al numero actual
-		for (int i = 0 ; i < t.length && !busqueda; i++) {
-			for (int j = 0 ; j < t[i].length ; j++) {
-				if (t[i][j] == valor) {
+		while (contadorFilas < t.length && !busqueda) {
+			while (contadorColumnas < t[contadorFilas].length && !busqueda) {
+				if (valor == t[contadorFilas][contadorColumnas]) {
 					busqueda = true;
 				}
+				contadorColumnas++;
 			}
+			contadorFilas++;
+			contadorColumnas = 0;
 		}
 		
 		// Devolvemos el booleano
